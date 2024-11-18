@@ -1,2 +1,5 @@
 data/jp_morgan
 .DS_Store
+.webui_secret_key
+benchmark.py
+*.parquet
