@@ -1,5 +1,7 @@
 dask==2024.10.0
 dask-expr==1.1.16
+ipykernel==6.29.5
+ipython==8.29.0
 keras==3.6.0
 matplotlib==3.9.2
 matplotlib-inline==0.1.7
