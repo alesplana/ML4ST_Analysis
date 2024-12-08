@@ -1,4 +1,4 @@
-data/jp_morgan
+data/
 .DS_Store
 .webui_secret_key
 benchmark.py
