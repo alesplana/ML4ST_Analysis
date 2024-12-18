@@ -153,13 +153,14 @@ def main():
     categorical_features = ['std_txn_type', 'std_txn_method', 'prev_std_txn_type', 'prev_std_txn_method']
     df = ohe_encoder(df, categorical_features=categorical_features)
     mi_df = mi_calc(df, categorical_features)
+    mi_df.to_csv(f'../data/feature_selection/{df_name}_mi_to_target.csv', index=False)
 
     non_object = df.select_dtypes(exclude=['object', 'datetime64[ns]']).columns
 
     plot_mutual_info(mi_df, df_name)
     plot_mi_elbow(mi_df, df_name)
 
-    mi_matrix, collinear_pairs = detect_collinearity_with_mi(df[non_object[1:]], threshold=1.5)
+    mi_matrix, collinear_pairs = detect_collinearity_with_mi(df[non_object[1:]], threshold=0.5)
     plot_mi_heatmap(mi_matrix, feature_names=df[non_object[1:]].columns, df_name=df_name)
     pd.DataFrame(collinear_pairs, columns=['feature1', 'feature2', 'mi_score']).to_csv(f'../data/feature_selection/{df_name}_col_pairs.csv', index=False)
 
