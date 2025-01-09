@@ -1,2 +1,2 @@
-# AML-Scoring
-Machine Learning/Deep Learning-based Transaction Scoring System for Anti-Money Laundering System
+# Suspicious Transaction-Classifier
+Machine Learning/Deep Learning Evaluation System for Suspicious Transaction Detection
